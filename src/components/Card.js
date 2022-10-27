@@ -4,6 +4,8 @@ import "./Card.css";
 function Card(props) {
   const style = {
     backgroundColor: props.Bg,
+    heigth: props.sizeHeight + "px",
+    width: props.sizeWidth + "px",
   };
   return (
     <div className="card" style={style}>
