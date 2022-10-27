@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useEffect, useState } from "react";
+import Card from "./components/Card";
+import Backg from "./components/Backg";
 
 function App() {
+  const [Background, setBackground] = React.useState("#fff");
+  const addBackgroundHandler = (val) => {
+    console.log(val);
+    setBackground(val);
+  };
+
+  const removeBackgroundHandler = () => {
+    setBackground("#fff");
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Backg onAddBackground={addBackgroundHandler} />
+      <Card Bg={Background} />
     </div>
   );
 }
